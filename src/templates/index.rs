@@ -37,7 +37,11 @@ fn index_page<G: Html>(cx: Scope) -> View<G> {
         }
         footer {
             p {
-                "A Free and Open Source proposal by "
+                "A "
+                a(href = "https://github.com/plabayo/befoss") {
+                    "Free and Open Source"
+                }
+                " proposal by "
                 a (href="https://plabayo.tech") {
                     "Plabayo.tech"
                 }
