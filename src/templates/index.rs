@@ -16,8 +16,7 @@ fn index_page<G: Html>(cx: Scope) -> View<G> {
                 }
                 div (class = "nav-links") {
                     a (href="/proposal") { "🪧 Proposal" }
-                    a (href="/assets") { "🎨 Assets" }
-                    a (href="/swag") { "👕 Swag" }
+                    a (href="/game") { "🎮 Game" }
                 }
             }
             div (class = "flag") {
@@ -32,6 +31,12 @@ fn index_page<G: Html>(cx: Scope) -> View<G> {
                     p {
                         "👋 Hello Fellow Citizens, let's talk about software 👩‍💻"
                     }
+                    img (
+                        src=".perseus/static/burning_money.png",
+                        alt="Politicians Burning Our Tax Money on Shitware",
+                        style="width: 95%;",
+                        class="center-img"
+                    ) {}
                 }
             }
         }
@@ -57,98 +62,7 @@ fn head(cx: Scope) -> View<SsrNode> {
         title { "#befossdev" }
         meta(charset = "UTF-8")
         meta(name = "viewport", content = "width=device-width, initial-scale=1.0")
-        style {
-            (r#"
-                body {
-                    width: 100vw;
-                    height: 100vh;
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: content-box;
-                }
-
-                div#root {
-                    height: 100%;
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: auto 1fr auto;
-                    grid-template-areas: 
-                        'header'
-                        'main'
-                        'footer';
-                }
-
-                header {
-                    grid-area: header;
-                }
-
-                main {
-                    grid-area: main;
-                }
-
-                footer {
-                    grid-area: footer;
-                }
-
-                footer p {
-                    text-align: center;
-                    padding: 0 10px;
-                }
-
-                header, footer {
-                    background-color: #bbb;
-                }
-
-                header a, header a:visited {
-                    text-decoration: none;
-                }
-
-                header .nav {
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 0 10px;
-                }
-
-                header .nav-links {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                header .nav-links a {
-                    padding: 0 10px;
-                    font-size: 1.2rem;
-                    color: black;
-                    font-weight: bold;
-                }
-
-                header div.flag {
-                    height: 5px;
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                header div.flag > div {
-                    flex: 1;
-                }
-
-                main {
-                    background-color: #69707f;
-                }
-
-                .container {
-                    max-width: 780px;
-                    margin: auto;
-                    background-color: #eee;
-                    height: 100%;
-                }
-
-                .container p {
-                    margin: 0;
-                    padding: 10px;
-                }
-            "#)
-        }
+        link(rel = "stylesheet", href = ".perseus/static/style.css")
     }
 }
 
